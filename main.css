@@ -9,7 +9,10 @@ body{
 .bl-center {
     padding-top: 100px;
     margin: auto;
-    max-width: 80%;
+    max-width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+    
 }
 
 .bl-bought {
@@ -42,7 +45,9 @@ body{
     padding:5px;
     background-color: #cdcbcb;
     border-radius: 3px;
-    margin: 15px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
     
 }
 
@@ -62,6 +67,7 @@ body{
     background-color: blue;
     margin-left: -5px;
     border-radius: 2px;
+    position: relative;
     float:	center;
     display: inline-block;
     width: 17%;
@@ -82,6 +88,10 @@ body{
     margin-top: 10px;
     
    
+}
+
+.bl-row{
+    position: relative;
 }
 
 /*Кнопки*/
@@ -107,19 +117,19 @@ body{
     background-color: #04a613;
     width: 30px;
     height: 30px;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     margin: auto;
-     border-radius: 15px;
+    border-radius: 15px;
 }
 .bl-mines{
     width: 30px;
     height: 30px;
-     background-color: pink;
-     font-size: 20px;
+    background-color: pink;
+    font-size: 15px;
     color: white;
     margin: auto;
-     border-radius: 15px;
+    border-radius: 15px;
 }
 
 .bl-product{
@@ -149,3 +159,156 @@ body{
      width: 30px;
     height: 30px;
 }
+
+.badge{
+    position: fixed;
+    height: 70px;
+    bottom:-30px;
+    border-radius: 5px 0;
+    background-color:blueviolet;
+    text-align:center;
+    transition:all 600ms ease-in-out;
+}
+
+.badge-student-name{
+    color: white;
+    font-size: 15px;
+    margin-top:10px;
+}
+
+.badge:hover{
+    height: 120px;
+    bottom:0px;
+    background-color:blue;
+
+}
+
+.badge-title{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    font-weight: 20px;
+    color:white;
+}
+
+
+
+.body{
+    min-width:100%;
+}
+
+
+.bl-plus{
+    position:relative;
+}
+
+
+.bl-mines:hover::before{
+    color: white;
+    content: "Decrease";
+    background-color: darkviolet;
+    position: absolute;
+    top: -15px; 
+    width: 70px;
+    border-radius: 5px;
+    margin-left:300px;
+    left:0;
+}
+
+.bl-plus:hover::before{
+    color: white;
+    content: "Increase";
+    background-color: darkviolet;
+    position: absolute;
+    top: -15px; 
+    width: 70px;
+    border-radius: 5px;
+    margin-left:-25px;
+}
+
+.bl-buttonsDel:hover::before{
+    color: white;
+    content: "Cancel";
+    background-color: darkviolet;
+    position: absolute;                     /*вказати релетів для рядка в якому елементи*/
+    top: -10px; 
+    width: 80px;
+    border-radius: 5px;
+    margin-left: -35px;
+    
+}
+
+.bl-add:hover::before{
+    color: white;
+    content: "Add";
+    background-color: darkviolet;
+    position: absolute;
+    top: -20px; 
+    border-radius: 5px;
+    margin-left:0px;
+
+}
+
+.bl-buttonsBuy:hover::before{
+    color: white;
+    content: "Buy";
+    background-color: darkviolet;
+    position: absolute;
+    top: -15px; 
+    width: 70px;
+    border-radius: 5px;
+    margin-left: 640px;
+    left:0;
+}
+
+
+@media print{
+     .bl-center {
+    padding-top: 100px;
+        margin: auto;
+        max-width: 95%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .badge-title{
+        display:none;
+        border:1px solid black;
+    }
+    .badge{ 
+        height: 100px;
+    }
+    .badge-student-name{
+        color: black;
+    }
+}
+.badge{
+    bottom:0px;  
+    border:1px solid black;
+}
+@media (max-width: 500px ){
+    .bl-bought{
+        float: none;
+        width:100%;
+        margin-top: 10px;
+    }
+    
+    .bl-list {
+    background-color: white;
+    border-radius: 2px;
+    display: inline-block;
+     width: 100%;
+    }
+    
+    .bl-center {
+    padding-top: 100px;
+    margin: auto;
+    max-width: 95%;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+    }
+}
+
+
+
+
