@@ -31,6 +31,7 @@ $(function() {
                node.fadeOut(250,	function(){
                node.remove();
                nodeTit.remove();
+                   
                    node.fadeIn(250);
            });
            });
@@ -59,40 +60,59 @@ $(function() {
            });
            node.find(".bl-buttonsBuy").click(function(){                //процес купування
                node.fadeOut(250,	function(){
-               node.find(".bl-buttonsNotBuy").show();
-               node.find(".bl-buttonsBuy").hide();
-               node.find(".bl-product").css("text-decoration","line-through");
-               node.find(".bl-plus").hide();
-               node.find(".bl-mines").hide();
-               node.find(".bl-buttonsDel").hide();
-               nodeTit.find(".bl-storage").hide();
-               nodeTit.find(".bl-buyProd").hide();
-               nodeTited.find(".bl-storage").text(nodeTit.find(".bl-storage").text());
-               nodeTited.find(".bl-buyProd").text(nodeTit.find(".bl-buyProd").text());
-               nodeTited.find(".bl-storage").show();
-               nodeTited.find(".bl-buyProd").show();
-               lIST_TITLED.append(nodeTited);
+                   node.find(".bl-buttonsNotBuy").show();
+                   node.find(".bl-buttonsBuy").hide();
+                   node.find(".bl-product").css("text-decoration","line-through");
+                   node.find(".bl-plus").hide();
+                   node.find(".bl-mines").hide();
+                   node.find(".bl-buttonsDel").hide();
+                   nodeTit.find(".bl-storage").hide();
+                   nodeTit.find(".bl-buyProd").hide();
+                   nodeTited.find(".bl-storage").text(nodeTit.find(".bl-storage").text());
+                   nodeTited.find(".bl-buyProd").text(nodeTit.find(".bl-buyProd").text());
+                   nodeTited.find(".bl-storage").show();
+                   nodeTited.find(".bl-buyProd").show();
+                   lIST_TITLED.append(nodeTited);
                    node.fadeIn(250);
-           });
+               });
            });
            
            node.find(".bl-buttonsNotBuy").click(function(){         //процес відміни
-               node.fadeOut(250,	function(){
-               node.fadeIn(700);
-               node.find(".bl-buttonsNotBuy").hide();
-               node.find(".bl-buttonsBuy").show();
-               node.find(".bl-product").css("text-decoration","none");
-               node.find(".bl-plus").show();
-               node.find(".bl-mines").show();
-               node.find(".bl-buttonsDel").show();
-               nodeTit.find(".bl-storage").show();
-               nodeTit.find(".bl-buyProd").show();
-               nodeTited.find(".bl-storage").hide();
-               nodeTited.find(".bl-buyProd").hide();
-               lIST_TITLED.append(nodeTited);
+               node.fadeOut(250,function(){
+                   node.fadeIn(700);
+                   node.find(".bl-buttonsNotBuy").hide();
+                   node.find(".bl-buttonsBuy").show();
+                   node.find(".bl-product").css("text-decoration","none");
+                   node.find(".bl-plus").show();
+                   node.find(".bl-mines").show();
+                   node.find(".bl-buttonsDel").show();
+                   nodeTit.find(".bl-storage").show();
+                   nodeTit.find(".bl-buyProd").show();
+                   nodeTited.find(".bl-storage").hide();
+                   nodeTited.find(".bl-buyProd").hide();
+                   lIST_TITLED.append(nodeTited);
                    node.fadeIn(250);
+               });
            });
-           });
+    
+           node.find(".bl-product").click(function(){
+               node.find(".inputReduct").val(node.find(".bl-product").text());
+                node.find(".bl-product").hide();
+               node.find(".inputReduct").show();
+                   });
+                    
+               
+              node.find(".inputReduct").focusout(function(){
+                   node.find(".inputReduct").hide();
+                  var input2 = node.find(".inputReduct");
+                    var value2 = input2.val();
+                    node.find(".bl-product").text(value2);
+                   node.find(".bl-product").show();
+                  nodeTit.find(".bl-storage").text(value2);
+                  
+              })
+           
+          
            lIST.append(node);
            lIST_TITLE.append(nodeTit);
         
